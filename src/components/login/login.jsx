@@ -1,15 +1,18 @@
 import Header from '../header/header';
 import Footer from '../footer/footer';
+import style from './login.module.css'
 
 const Login = ({ authService }) => {
+
     const onLogin = (e) => {
         authService.login(e.currentTarget.textContent)
     }
+
     return (
-        <section>
+        <section className={style.container}>
             <Header />
             <section>
-                <h1>Login</h1>
+                <p className={style.title}>Login</p>
                 <ul>
                     <li>
                         <button onClick={onLogin}>Google</button>
