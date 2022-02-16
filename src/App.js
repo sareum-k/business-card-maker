@@ -1,13 +1,9 @@
 import './App.css';
+import Login from './components/login/login'
 
-function App() {
-  return (
-    <div className="App">
-      <p>
-        Edit and save to reload.
-      </p>
-    </div>
-  );
+function App({ authService }) {
+  return <Login authService={authService} />;
+
 }
 
 export default App;
