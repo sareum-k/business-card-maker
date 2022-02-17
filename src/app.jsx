@@ -1,10 +1,17 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import styles from './app.module.css';
-import Login from './components/login/login'
+import Login from './components/login/login';
+import Main from './components/main/main';
 
 function App({ authService }) {
   return (
     <div className={styles.app}>
-      < Login authService={authService} />;
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={< Login authService={authService} />} />
+          <Route path="/main" element={<Main />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   )
 
