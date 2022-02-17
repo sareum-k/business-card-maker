@@ -9,10 +9,15 @@ class AuthService {
         return firebaseApp.auth().signInWithPopup(authProvider);
     }
 
+    //login이 되어있다면 바로 main 화면으로 전환
     onAuthChnage(onUserChanged) {
-        firebase.auth().onAuthChanged(user => {
+        firebase.auth().onAuthStateChanged(user => {
             onUserChanged(user);
         })
+    }
+
+    logout() {
+        firebase.auth().signOut();
     }
 }
 

@@ -11,19 +11,19 @@ const Login = ({ authService }) => {
         navigate('/main', {
             state: { id: userId }
         })
-    }
-
-    // useEffect(() => {
-    //     authService.onAuthChnage(user => {
-    //         user && succeedLogin()
-    //     })
-    // });
+    };
 
     const onLogin = (e) => {
         authService
             .login(e.currentTarget.textContent)
             .then((data) => goToMaker(data.user.uid));
-    }
+    };
+
+    useEffect(() => {
+        authService.onAuthChnage(user => {
+            user && goToMaker(user.uid);
+        })
+    });
 
     return (
         <section className={styles.container}>
