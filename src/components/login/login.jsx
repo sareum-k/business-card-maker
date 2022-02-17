@@ -1,6 +1,6 @@
 import Header from '../header/header';
 import Footer from '../footer/footer';
-import style from './login.module.css'
+import styles from './login.module.css'
 
 const Login = ({ authService }) => {
 
@@ -9,16 +9,16 @@ const Login = ({ authService }) => {
     }
 
     return (
-        <section className={style.container}>
+        <section className={styles.container}>
             <Header />
             <section>
-                <p className={style.title}>Login</p>
+                <p className={styles.title}>Login</p>
                 <ul>
                     <li>
-                        <button onClick={onLogin}>Google</button>
+                        <button className={styles.login} onClick={onLogin}>Google</button>
                     </li>
                     <li>
-                        <button onClick={onLogin}>Github</button>
+                        <button className={styles.login} onClick={onLogin}>Github</button>
                     </li>
                 </ul>
             </section>

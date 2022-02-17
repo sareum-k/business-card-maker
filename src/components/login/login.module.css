@@ -1,12 +1,15 @@
+@value makerWhite, makerPink, makerGrey from '../../common/colors.css';
+
 .container{
-    border: 1px solid #FFA0A0;
-    width: 22%;
+    border: 1px solid makerPink;
+    width: 25em;
     margin: 15em auto;
     border-radius:5px;
     text-align: center;
+    background-color: makerWhite;
 }
 .title{
-    color: #FFA0A0;
+    color: makerPink;
     font-size: 1.8em;
     font-weight: bold;
     margin: 0.7em;
@@ -18,17 +21,18 @@ ul{
 li{
     list-style: none;
 }
-button{
+.login{
     width:80%;
     height: 2.5em;
     margin-bottom: 1em;
     border-radius: 1.5em;
-    border: 1px solid #FFA0A0;
-    background-color: #ffffff;
+    border: 1px solid makerPink;
+    background-color: makerWhite;
     font-size: 1.1em;
-    color: rgb(72, 72, 72);
+    color: makerGrey;
+    cursor: pointer;
 }
 button:hover{
-    background-color: #FFA0A0;
-    color: #ffffff;
+    background-color: makerPink;
+    color: makerWhite;
 }

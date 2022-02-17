@@ -1,11 +1,12 @@
+@value makerPink, makerWhite from '../../common/colors.css';
+
 .container {
     text-align: center;
-    /* padding-top: 1em; */
-    background-color:#FFA0A0;
+    background-color: makerPink;
 }
 .title {
     margin: 0;
     padding: 1em;
     font-size: 0.9em;
-    color:#ffffff;
+    color: makerWhite;
 }

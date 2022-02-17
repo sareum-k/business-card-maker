@@ -1,13 +1,15 @@
+@value makerPink, makerWhite, makerBlack from '../../common/colors.css';
+
 .container {
-    /* border: 1px solid black; */
     text-align: center;
     padding-top: 1em;
-    background-color:#FFA0A0;
+    background-color: makerPink;
+    position: relative;
 }
 .img{
     height: 2em;
     width: 3em;
-    color: #ffffff;
+    color: makerWhite ;
 }
 .title {
     font-size:1.4em;
@@ -15,5 +17,20 @@
     margin-bottom: 0;
     margin-top: 0.2em;
     padding-bottom: 0.5em;
-    color: #ffffff;
+    color: makerWhite;
+}
+.logout{
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    border: none;
+    padding: 0.3em 0.6em;
+    border-radius: 0.3em;
+    background-color: makerWhite;
+    color: makerPink;
+    cursor: pointer;
+}
+.logout:hover{
+    color:makerBlack;
+    background-color: makerWhite;
 }
