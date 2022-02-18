@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import Header from '../header/header';
 import Footer from '../footer/footer';
+import Editor from '../editor/editor';
+import Preview from '../preview/preview';
 import styles from './main.module.css';
 
 const Main = ({ authService }) => {
@@ -22,7 +24,10 @@ const Main = ({ authService }) => {
     return (
         <section className={styles.maker}>
             <Header onLogout={onLogout} />
-            <h1>Main</h1>
+            <div className={styles.container}>
+                <Editor />
+                <Preview />
+            </div>
             <Footer />
         </section>
     );
