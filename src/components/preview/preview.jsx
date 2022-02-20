@@ -6,9 +6,14 @@ const Preview = ({ cards }) => {
     return (
         <section className={styles.preview}>
             <h1 className={styles.title}>Card Preview</h1>
-            {cards.map(card => (
-                <PreviewCard card={card} />
-            ))}
+            <ul className={styles.ul}>
+                {cards.map(card => (
+                    <PreviewCard
+                        key={card.id}
+                        card={card}
+                    />
+                ))}
+            </ul>
         </section>
     );
 }

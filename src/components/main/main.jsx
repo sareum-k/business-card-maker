@@ -17,7 +17,7 @@ const Main = ({ authService }) => {
             email: 'rkdtkfma@naver.com',
             message: 'go for it',
             fileName: 'sareum',
-            fileURL: ''
+            fileURL: '/images/default_logo.png'
         },
         {
             id: '2',
@@ -28,18 +28,18 @@ const Main = ({ authService }) => {
             email: 'rkdtkfma@naver.com',
             message: 'go for it',
             fileName: 'sareum',
-            fileURL: ''
+            fileURL: '/images/default_logo.png'
         },
         {
             id: '3',
             name: 'sareum2',
             company: 'Kakao',
-            theme: 'light',
+            theme: 'colorful',
             title: 'Sofware Engineer',
             email: 'rkdtkfma@naver.com',
             message: 'go for it',
             fileName: 'sareum',
-            fileURL: ''
+            fileURL: null
         }
     ]);
     const navigate = useNavigate();
