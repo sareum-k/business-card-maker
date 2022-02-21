@@ -1,0 +1,16 @@
+@value makerPink, makerWhite from '../../common/colors.css';
+
+.button{
+    background-color: makerPink;
+    color: makerWhite;
+    border: 1px solid makerPink;
+    font-weight: bold;
+    font-size: 0.8em;
+    flex: 1 1 50%;
+    padding: 0.5em;
+    cursor: pointer;
+}
+
+.button:hover{
+    opacity: 0.8;
+}
