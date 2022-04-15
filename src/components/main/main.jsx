@@ -7,8 +7,8 @@ import Preview from '../preview/preview';
 import styles from './main.module.css';
 
 const Main = ({ authService }) => {
-    const [cards, setCards] = useState([
-        {
+    const [cards, setCards] = useState({ // 객체 안에 객체, key는 id값이 된다.
+        1: {
             id: '1',
             name: 'Sareum',
             company: 'Kakao',
@@ -19,8 +19,19 @@ const Main = ({ authService }) => {
             fileName: 'sareum',
             fileURL: '/images/default_logo.png'
         },
-        {
+        2: {
             id: '2',
+            name: 'Sareum',
+            company: 'Kakao',
+            theme: 'light',
+            title: 'Sofware Engineer',
+            email: 'rkdtkfma@naver.com',
+            message: 'go for it',
+            fileName: 'sareum',
+            fileURL: '/images/default_logo.png'
+        },
+        3: {
+            id: '3',
             name: 'Ellie',
             company: 'Samsung',
             theme: 'dark',
@@ -29,19 +40,9 @@ const Main = ({ authService }) => {
             message: 'go for it',
             fileName: 'sareum',
             fileURL: '/images/default_logo.png'
-        },
-        {
-            id: '3',
-            name: 'sareum2',
-            company: 'Kakao',
-            theme: 'colorful',
-            title: 'Sofware Engineer',
-            email: 'rkdtkfma@naver.com',
-            message: 'go for it',
-            fileName: 'sareum',
-            fileURL: null
         }
-    ]);
+    });
+
     const navigate = useNavigate();
 
     const onLogout = () => {
@@ -56,8 +57,14 @@ const Main = ({ authService }) => {
         })
     })
 
-    const addCrad = card => {
-        const updated = [...cards, card];
+    const createOrUpdateCard = card => {
+        const updated = { ...cards };
+        updated[card.id] = card;
+        setCards(updated);
+    }
+    const deleteCard = card => {
+        const updated = { ...cards };
+        delete updated[card.id];
         setCards(updated);
     }
 
@@ -65,7 +72,12 @@ const Main = ({ authService }) => {
         <section className={styles.maker}>
             <Header onLogout={onLogout} />
             <div className={styles.container}>
-                <Editor cards={cards} addCrad={addCrad} />
+                <Editor
+                    cards={cards}
+                    addCard={createOrUpdateCard}
+                    updateCard={createOrUpdateCard}
+                    deleteCard={deleteCard}
+                />
                 <Preview cards={cards} />
             </div>
             <Footer />

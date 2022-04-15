@@ -11,7 +11,6 @@ const AddForm = ({ onAdd }) => {
   const titleRef = useRef();
   const emailRef = useRef();
   const messageRef = useRef();
-  const AddRef = useRef();
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -59,8 +58,10 @@ const AddForm = ({ onAdd }) => {
         <ImageFileInput className={styles.fileInput} />
       </div>
       <Button
-        ref={AddRef}
-        className={styles.button} name="Add" onClick={onSubmit} />
+        className={styles.button}
+        name="Add"
+        onClick={onSubmit}
+      />
     </form>
   );
 }
